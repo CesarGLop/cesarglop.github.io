@@ -3905,3 +3905,272 @@ input, select, textarea {
 			}
 
 		}
+/* ESTA PARTE ES PARA MODIFICAR Y PODER PONER VARIAS IMÁGENES EN UNA MISMA LINEA, SI QUIERES 3 O MAS USA 33% O 25% PARA 4 */
+*{
+	box-sizing:border-box;
+}
+.clml{
+	float:left;
+	width: 50%;
+	padding-left: 20%;
+	padding-right: 15px;
+
+}
+.clmr{
+	float:left;
+	width: 50%;
+	padding-left: 15px;
+	padding-right: 20%;
+
+}
+.clml img{
+	height: 80%;
+}
+.clmr img{
+	height: 80%;
+}
+
+/* AQUI VA LO DE LOS INDICARORESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
+
+.title-skills{
+    color: #68e450;
+}
+.section-title{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 5%;
+    font-size: 50px; text-align: center; font-weight: 800;
+}
+
+/*---------------------------------------------------------------
+            SKILL METER
+---------------------------------------------------------------*/
+.skill-meter{
+    position:relative;
+    height:300px; width:600px;
+    margin-top:10px;
+    margin-left: auto; margin-right: auto;
+  
+}
+.skill-meter-frame{
+    left:15%;
+}
+.skill-meter-frame{
+    position: relative;
+    height:200px; width:400px;
+    border-radius: 210px 210px 0 0;
+    border-style: solid; border-width: 10px; 
+    border-color: #2D2E30;
+    overflow: hidden;
+}
+.skill-meter-frame-lvls{
+    position:relative;
+    top:-200px;
+}
+.skill-meter-inner{
+    position: relative;
+    height: 60px; width:100px;
+    border-style: inherit; border-width: inherit;
+    border-color: inherit;
+    border-top-left-radius: 65px;border-top-right-radius: 65px;
+    background-color: white;
+    margin-left: auto; margin-right: auto; top:127px;
+}
+
+/*----------------------------------------------------------------
+            SKILL METER SECTIONS ---------               ESTO CONTROLA LOS COLORES DE CADA SECCIÓN
+----------------------------------------------------------------*/
+.skill-tab{
+    position: absolute;
+    height:200px; width:200px;
+    top:-8px; left:-11px;
+    transform-origin: bottom right;
+    z-index: -3;
+}   
+.skill-tab-1{
+    background-color:  #c2e5c1;
+    transform: rotate(0deg) skewX(60deg);
+}
+.skill-tab-2{
+    background-color:#8cd98d;
+    transform: rotate(30deg) skewX(60deg);
+}
+.skill-tab-3{
+    background-color: #7dcf6f;
+    transform: rotate(60deg) skewX(60deg);
+}
+.skill-tab-4{
+    background-color: #5bc653;
+    transform: rotate(90deg) skewX(60deg);
+}
+.skill-tab-5{
+    background-color: #39ac41;
+    transform: rotate(120deg) skewX(60deg);
+}
+.skill-tab-6{
+    background-color: #2d862d;
+    transform: rotate(150deg) skewX(60deg);
+}
+.skill-meter-needle{
+    width:160px;
+    border-style:solid;
+    border-width: 10px; border-color: #2D2E30;
+    border-radius: 6px;
+    position:absolute;
+    top:190px;
+    left:30px;
+    z-index:10;
+    transform-origin: center right;
+    transition: transform 0.5s ease;
+    z-index: -1;
+   /* transform: rotate(90deg);*/
+}
+/*-------------------------------------------------------------
+            SKILL SELECT MENU
+------------------------------------------------------------*/
+.nav-wrap-skill{
+    border: none;
+}
+.navbar-toggle{
+    background-color: #6fcdcf !important;
+}
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+.navbar .navbar-collapse {
+    margin-bottom:0px;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+}
+.navbar-skill{
+    background-color: transparent;
+}
+
+.skill-select{
+    position: absolute;
+    height:50px;
+    width:100%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #1e6794; background-color: #1e6794;
+    text-align: center;
+    word-wrap: break-word;
+    margin-left: 0%;
+}
+.skill-btn{
+    display: inline-block; float: left;
+    padding: 0px;
+    border-style: none;
+    border-width: 0px; background-color: transparent;
+    width:110px; height: 40px;
+    margin-top:0px;
+    position: relative; 
+    transition: width 1s ease;  
+}
+.skill-btn:focus{
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+}
+
+.skill-btn p {
+    opacity:1;
+    color: #ffffff;
+    font-size:15px;
+    font-weight: 800;
+    margin: 0;
+    position: relative;
+    transform: translate(-0%, 0%);
+    transition: opacity 1.5s ease; 1   
+}
+.skill-btn:hover {
+    background-color:  #5bc653;
+}
+.skill-btn:focus {
+    background-color:  #5bc653;  
+}
+
+.skill-btn:hover > p{
+    color:white;
+}
+.skill-btn:focus > p{
+    color:white;
+}
+
+.skill-meter-frame-lvls{
+    overflow: visible;
+    z-index: -1;
+    border: none;
+    
+}
+.skill-meter-label{
+    position: absolute;
+    display: inline;
+    opacity: 0.6;
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+}
+.skill-meter-label-1, 
+.skill-meter-label-2, 
+.skill-meter-label-3 {
+    text-align: right;
+}
+.skill-meter-label-4{
+    text-align: center;
+}
+
+.skill-meter-label-1{top:175px; left:-105px;}
+.skill-meter-label-2{top:65px; left:-55px;}
+.skill-meter-label-3{top:-20px; left:0px;}
+.skill-meter-label-4{top:-55px; left:165px;}
+.skill-meter-label-5{top:-20px; left:310px;}
+.skill-meter-label-6{top:65px; left:395px;}
+.skill-meter-label-7{top:175px; left:415px;}
+
+
+/*-------------------------------------------------------------
+            SKILL DESC BOX
+------------------------------------------------------------*/
+.skill-detail-box{
+    position: relative;
+    height: 55px; width: 650px;
+    margin-left:auto; margin-right: auto;
+    background-color: transparent;
+    border-radius: 10px; border:solid 2px #5bc653;
+    padding:5px;
+}
+.skill-detail-box:before{
+    content:'Details';
+    width:100px; top:1px;
+    background-color:#5bc653;
+    color:white;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+.skill-detail-box-desc{
+    position: relative;
+    top:-39px; left:105px; 
+    width:530px; height:40px;
+    border-radius: 5px; border:solid 2px #5bc653;
+    color:#5bc653;
+    font-size: 18px; font-weight: 600;
+    padding: 7px;
+}
+.skill-detail-box-desc p {
+    position: relative;
+    top: -7px; left:-7px;
+    width
+}
+.skill-detail-box:before,
+.skill-detail-box:after {
+    position:relative;
+    display:block;
+    padding: 8px 6px;
+    height:40px;
+}
+.skill-detail-box{
+    margin-bottom: 5%;
+}

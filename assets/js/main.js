@@ -1,9 +1,3 @@
-/*
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function($) {
 
 	var	$window = $(window),
@@ -186,5 +180,173 @@
 
 				}
 			});
+// DESDE AQUI PUSE ******************************************
+function resetDesc (){
+    $('.skill-detail-box-desc').html('');
+  }
+  $(".skill-btn-excel").click(
+    function () {
+      //AlertSave();
+      resetOpacity();
+      excelNeedle();
+      resetDesc();
+      excelDesc();
+      $('.skill-meter-label-7').css('opacity', '1');						//EXCEL
+    }
+  );
+  $(".skill-btn-html").click(
+    function () {
+		resetOpacity();
+		htmlNeedle();
+		resetDesc();
+		htmlDesc();
+		$('.skill-meter-label-5').css('opacity', '1');						//SQL
+    }
+	);
+    $(".skill-btn-css").click(
+    function () {
+    	resetOpacity();
+		cssNeedle();
+		resetDesc();
+		cssDesc();
+		$('.skill-meter-label-4').css('opacity', '1');						//PYTHON
+    }
+	);
+	$(".skill-btn-js").click(
+    function () {
+		resetOpacity();
+		jsNeedle();
+		resetDesc ();
+		jsDesc ();
+		$('.skill-meter-label-2').css('opacity', '1');						//R
+    }
+  );
+  $(".skill-btn-sql").click(
+    function () {
+      resetOpacity();
+      sqlNeedle();
+      resetDesc ();
+      sqlDesc ();
+      $('.skill-meter-label-5').css('opacity', '1');						//TABLEAU
+    }
+  );
+  $(".skill-btn-python").click(
+    function () {
+      resetOpacity();
+      pythonNeedle();
+      resetDesc ();
+      pythonDesc ();
+      $('.skill-meter-label-6').css('opacity', '1');						//POWERBI
+    }
+  );
+  $(".skill-btn-joke1").click(
+    function () {
+      resetOpacity();
+      j1Needle();
+      resetDesc ();
+      j1Desc ();
+      $('.skill-meter-label-1').css('opacity', '1');						//JOKE
+    }
+  );
+
+
+
+
+function resetOpacity() {
+  $('.skill-meter-label').css('opacity','0.6');
+}
+
+///////////////////////NEEDLE ROTATE///////////////////////////
+function hideNeedle(){
+  $(".skill-meter-needle").hide();
+}
+
+function excelNeedle(){					//ESTA ES LA QUE CONTROLA EXCEL
+  $(".skill-meter-needle").animate({  borderSpacing: 170 }, {
+    step: function(now,fx) {
+      $(this).css('-webkit-transform','rotate('+now+'deg)');
+      $(this).css('-moz-transform','rotate('+now+'deg)');
+      $(this).css('transform','rotate('+now+'deg)');
+    },
+    duration:'slow'
+  },'linear');}
+  function htmlNeedle(){				//ESTA ES LA QUE CONTROLA SQL
+    $(".skill-meter-needle").animate({  borderSpacing: 120 }, {
+      step: function(now,fx) {
+        $(this).css('-webkit-transform','rotate('+now+'deg)');
+        $(this).css('-moz-transform','rotate('+now+'deg)');
+        $(this).css('transform','rotate('+now+'deg)');
+      },
+      duration:'slow'
+    },'linear');}
+    function cssNeedle(){				//ESTA ES LA QUE CONTROLA PYTHON
+      $(".skill-meter-needle").animate({  borderSpacing: 90 }, {
+        step: function(now,fx) {
+          $(this).css('-webkit-transform','rotate('+now+'deg)');
+          $(this).css('-moz-transform','rotate('+now+'deg)');
+          $(this).css('transform','rotate('+now+'deg)');
+        },
+        duration:'slow'
+      },'linear');}
+      function jsNeedle(){				//ESTA ES LA QUE CONTROLA R
+        $(".skill-meter-needle").animate({  borderSpacing: 50 }, {
+          step: function(now,fx) {
+            $(this).css('-webkit-transform','rotate('+now+'deg)');
+            $(this).css('-moz-transform','rotate('+now+'deg)');
+            $(this).css('transform','rotate('+now+'deg)');
+          },
+          duration:'slow'
+        },'linear');}
+        function pythonNeedle(){		//ESTA ES LA QUE CONTROLA POWER BI
+          $(".skill-meter-needle").animate({  borderSpacing: 145 }, {
+            step: function(now,fx) {
+              $(this).css('-webkit-transform','rotate('+now+'deg)');
+              $(this).css('-moz-transform','rotate('+now+'deg)');
+              $(this).css('transform','rotate('+now+'deg)');
+            },
+            duration:'slow'
+          },'linear');}
+          function sqlNeedle(){			//ESTA ES LA QUE CONTROLA TABLEAU
+            $(".skill-meter-needle").animate({  borderSpacing: 120 }, {
+              step: function(now,fx) {
+                $(this).css('-webkit-transform','rotate('+now+'deg)');
+                $(this).css('-moz-transform','rotate('+now+'deg)');
+                $(this).css('transform','rotate('+now+'deg)');
+              },
+              duration:'slow'
+            },'linear');}
+            function j1Needle(){		//ESTA ES LA QUE CONTROLA SINGING JAJA
+              $(".skill-meter-needle").animate({  borderSpacing: 10 }, {
+                step: function(now,fx) {
+                  $(this).css('-webkit-transform','rotate('+now+'deg)');
+                  $(this).css('-moz-transform','rotate('+now+'deg)');
+                  $(this).css('transform','rotate('+now+'deg)');
+                },
+                duration:'slow'
+              },'linear');}
+
+              //////////////////////DESCRIPTION BOX///////////////////////
+
+              function excelDesc (){			//EXCEL
+                $('<span>Macros, VBA, advanced logical formulas, vlookup</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+              }
+              function htmlDesc (){				//SQL
+                $('<span>Window Functions, CTEs, Subqueries, Advanced Joins</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+              }
+              function cssDesc (){				//PYHTON
+                $('<span>Data Structures, Numpy, Pandas, Matplotlib, Seaborn</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+              }
+              function jsDesc (){				//R
+                $('<span>dplyr, ggplot2</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+              }
+              function pythonDesc (){			//POWER BI
+                $('<span>Power Query, Modeling, Relationships, DAX</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+              }
+              function sqlDesc (){				//TABLEAU
+                $('<span>Tableau Prep, Modeling, Calc Fields, Table Calculations </span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+              }
+              function j1Desc (){				//SINGING
+                $('<span>No karaoke please</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+              }
 
 })(jQuery);
