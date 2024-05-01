@@ -4174,3 +4174,30 @@ input, select, textarea {
 .skill-detail-box{
     margin-bottom: 5%;
 }
+@media (max-width: 767px) {
+    .skill-detail-box {
+        height: auto; /* Set height to auto for responsiveness */
+        max-width: 100%; /* Ensure skill detail box doesn't exceed container width */
+        margin: 0 auto; /* Center skill detail box horizontally */
+        padding: 5px; /* Adjust padding for responsiveness */
+    }
+    
+    .skill-detail-box:before {
+        width: auto; /* Set width to auto for responsiveness */
+        top: 1px; /* Adjust top position for responsiveness */
+        left: 0; /* Align to the left */
+    }
+
+    .skill-detail-box-desc {
+        top: 0; /* Adjust top position for responsiveness */
+        left: 0; /* Align to the left */
+        width: auto; /* Set width to auto for responsiveness */
+        height: auto; /* Set height to auto for responsiveness */
+        padding: 7px; /* Adjust padding for responsiveness */
+    }
+
+    .skill-detail-box-desc p {
+        top: 0; /* Adjust top position for responsiveness */
+        left: 0; /* Align to the left */
+    }
+}
