@@ -6,6 +6,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Custom CSS for responsiveness */
+			@media (max-width: 767px) { /* Adjust styles for screens smaller than 768px */
+				.inner {
+					padding-left: 20px; /* Adjust left padding for skillmeter and skill detail box */
+					padding-right: 20px; /* Adjust right padding for skillmeter and skill detail box */
+				}
+				.skill-meter {
+					transform: scale(0.6); /* Reduce size of skill meter */
+					max-width: 100%; /* Ensure skill meter doesn't exceed container width */
+					margin: 0 auto; /* Center skill meter horizontally */
+				}
+				.skill-detail-box {
+					transform: scale(0.6); /* Reduce size of skill detail box */
+					max-width: 100%; /* Ensure skill detail box doesn't exceed container width */
+					margin: 0 auto; /* Center skill detail box horizontally */
+				}
+        	}
+		</style>
 	</head>
 	<body class="is-preload">
 
