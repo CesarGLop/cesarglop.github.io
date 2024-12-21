@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Excel Rickrolled</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html#two" class="title">🗂️ My Projects</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="NYCTree.html">Previous</a></li>
+						<li><a href="DiabetesProject.html">Next</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Never Gonna Give You Up - Video Player Replication in Excel</h1>
+							<p style="color: white; text-align: justify;">In a masterful blend of nostalgia and technology, this project breathes new life into Rick Astley's iconic "Never Gonna Give You Up" by bringing it to Excel! By skillfully combining Python, Excel VBA, and a dash of creativity, the result is a pixelated homage to Rickrolling that transforms video frames into cells, turning every viewer into an unsuspecting data-loving victim of the ultimate spreadsheet prank.</p>
+								<div style="text-align: center; width: 100%; max-width: 1000px; margin: 0 auto;">
+									<div style="padding:54.17% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1041320965?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Excel - Never Gonna Give You Up"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+								</div>
+								<br>
+								<h3 class="major">Detailed Explanation of the Steps:</h3>
+								<h4 class="major">1. Frame Extraction:</h4>
+								<p style="color: white; text-align: justify; font-size:large;">
+								Using Python, video frames were extracted at a rate of 10 frames per second. Each frame was resized and simplified, 
+								reducing resolution and color depth to fit within the manageable confines of an Excel sheet.
+								<h4 class="major">2. Data Conversion:</h4>
+								<p style="color: white; text-align: justify; font-size:large;">
+								The reduced frames were converted into HEX color codes. These codes were stored in an Excel file, one for each pixel, 
+								representing the color values for recreating the image in Excel cells.
+								<h4 class="major">3. VBA Integration:</h4>
+								<p style="color: white; text-align: justify; font-size:large;">
+								Leveraging Excel's VBA, a script was written to process the HEX codes and visually recreate 
+								each video frame directly within Excel's cells, effectively treating the sheet as a pixel grid.
+								<h4 class="major">4. Frame Capture:</h4>
+								<p style="color: white; text-align: justify; font-size:large;">
+								After generating each frame in Excel, screenshots of the sheets were taken to capture 
+								the visualization. This ensured uniformity and kept the recreated frames ready for final assembly.
+								<h4 class="major">5. Video Compilation:</h4>
+								<p style="color: white; text-align: justify; font-size:large;">
+								Python was used to stitch the screenshots together into a continuous video. The frames were 
+								synchronized with the original audio, creating a seamless rendition of the music video.
+								<h4 class="major">6. Final Touch:</h4>
+								<p style="color: white; text-align: justify; font-size:large;">
+								The output is a spectacularly quirky Excel-animated video that preserves the 
+								humor of Rickrolling while showcasing technical creativity.</p><br>
+							
+							<a href="downloads/Rickrolled/FrameExtraction.py" download>Download python code 1.Frame_Extraction.py</a><br>
+							<a href="downloads/Rickrolled/Resizing.py" download>Download python code 2.Frame_Resizing.py</a><br>
+							<a href="downloads/Rickrolled/ColorReduction.py" download>Download python code 3.Frame_Color_Reduction.py</a><br>
+							<a href="downloads/Rickrolled/HEXGenerator.py" download>Download python code 4.Frame_HEX_Generator.py</a><br>
+							<a href="downloads/Rickrolled/VBAMacro.txt" download>Download VBA code 5.VBAMacro.txt</a><br>
+							<a href="downloads/Rickrolled/Screenshot.ps1" download>Download PowerShell script 6.ScreenshotTaker.ps1</a><br>
+							<a href="downloads/Rickrolled/VideoCreator.py" download>Download python code 7.Video_Creator.py</a>
+
+
+							
+							<br><br><br>
+							<div style="text-align: center;">
+								<ul class="actions" style="display: inline-block;">
+									<li><a href="NYCTree.html" class="button">PREVIOUS</a>&ensp;<a href="DiabetesProject.html" class="button">NEXT</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+		<footer id="footer" class="wrapper alt">
+			<div class="inner">
+				<ul class="actions">
+					<li><a href="index.html#three" class="button">GET IN TOUCH!</a></li>
+				</ul>
+				<ul class="menu">
+					<li>&copy; All rights reserved.</li>
+				</ul>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
