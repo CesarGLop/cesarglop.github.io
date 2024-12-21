@@ -1,0 +1,116 @@
+Sub ReproducirFramesOptimizado()
+    Dim ws As Worksheet, Temp As Worksheet
+    Dim lastRow As Long, lastCol As Long
+    Dim frameRowStart As Long, frameRowEnd As Long
+    Dim r As Long, c As Long, i As Long: i = 0
+    Dim colorHex As String
+    Dim arrColors() As Variant
+    Dim salto As Long: salto = 145 ' Salto de filas entre frames
+    Dim rangoFrame As Range
+    Dim screenshotPath As String
+
+    ' Configuración inicial
+    CreateTempSheet
+    Application.ScreenUpdating = False
+    Set ws = ThisWorkbook.Sheets("All_Frames")
+    Set Temp = ThisWorkbook.Sheets("Temp")
+    lastRow = ws.Cells(ws.Rows.Count, 1).End(xlUp).Row
+    lastCol = ws.Cells(1, ws.Columns.Count).End(xlToLeft).Column
+
+    ' Limpieza inicial de formatos
+    ws.Cells.ClearFormats
+
+    ' Rango fijo para mostrar los frames
+    Set rangoFrame = Temp.Range("A1:DX72") ' Ajusta el tamaño según la resolución
+
+    ' Reproducir frames
+    Dim currentFrameIndex As Long: currentFrameIndex = 1
+    Do While currentFrameIndex <= lastRow
+        frameRowStart = currentFrameIndex
+        frameRowEnd = frameRowStart + 143
+        If frameRowEnd > lastRow Then Exit Do
+
+        ' Obtener los colores del frame actual
+        arrColors = ws.Range(ws.Cells(frameRowStart, 1), ws.Cells(frameRowEnd, lastCol)).Value
+
+        ' Aplicar los colores al rango fijo
+        For r = 1 To 144
+            For c = 1 To lastCol
+                colorHex = arrColors(r, c)
+                If Left(colorHex, 1) = "#" Then
+                    rangoFrame.Cells(r, c).Interior.Color = RGB( _
+                        CLng("&H" & Mid(colorHex, 2, 2)), _
+                        CLng("&H" & Mid(colorHex, 4, 2)), _
+                        CLng("&H" & Mid(colorHex, 6, 2)) _
+                    )
+                Else
+                    rangoFrame.Cells(r, c).Interior.ColorIndex = xlNone
+                End If
+            Next c
+        Next r
+
+        ' Avanzar al siguiente frame
+        currentFrameIndex = currentFrameIndex + salto
+        i = i + 1
+
+        ' Mostrar el frame actual
+        Application.ScreenUpdating = True
+        Esperar 0.05
+        
+        ' Tomar captura de pantalla
+        screenshotPath = "C:\Users\cglsy\OneDrive\Desktop\ProyectoNeverGGYU\Screenshot\screenshot_" & i & ".png"
+        Call Shell("powershell.exe -ExecutionPolicy Bypass -File C:\Users\cglsy\OneDrive\Desktop\ProyectoNeverGGYU\Screenshot.ps1 " & screenshotPath, vbHide)
+        
+        Esperar 0.05
+        
+        Application.ScreenUpdating = False
+    Loop
+
+    Application.ScreenUpdating = True
+    MsgBox "Reproducción completada.", vbInformation
+End Sub
+
+Sub Esperar(Intervalo As Double)
+    Dim Inicio As Double
+    Inicio = Timer
+    Do While Timer < Inicio + Intervalo
+        DoEvents
+    Loop
+End Sub
+
+Sub CreateTempSheet()
+    Dim ws As Worksheet
+    Dim wsExists As Boolean
+    
+    ' Verificar si la hoja "Temp" ya existe y eliminarla si es necesario
+    wsExists = False
+    For Each ws In ThisWorkbook.Sheets
+        If ws.Name = "Temp" Then
+            wsExists = True
+            Application.DisplayAlerts = False
+            ws.Delete
+            Application.DisplayAlerts = True
+            Exit For
+        End If
+    Next ws
+    
+    ' Crear nueva hoja llamada "Temp"
+    Set ws = Worksheets.Add
+    ws.Name = "Temp"
+    
+    ' Ajustar el ancho de las columnas de 1 a 256 a 0.75
+    Dim i As Integer
+    For i = 1 To 256
+        ws.Columns(i).ColumnWidth = 0.75
+    Next i
+    
+    ' Ajustar la altura de las filas de 1 a 144 a 6
+    Dim j As Integer
+    For j = 1 To 144
+        ws.Rows(j).RowHeight = 6
+    Next j
+    
+    ' Ajustar el zoom de la hoja a 60%
+    ws.Activate
+    ActiveWindow.Zoom = 60
+End Sub
