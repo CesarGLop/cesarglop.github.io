@@ -165,8 +165,8 @@
 		$('.features')
 			.scrollex({
 				mode: 'middle',
-				top: '-20vh',
-				bottom: '-20vh',
+				top: '-10vh',
+				bottom: '-10vh',
 				initialize: function() {
 
 					// Deactivate section.
